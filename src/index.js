@@ -9,7 +9,7 @@ const app = express();
 require('./database');
 
 // TODO Settings
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 8080);
 app.set('views', path.join(__dirname, 'views'));
 // ? Configuracion del motor de plantillas handlebars
 app.engine('.hbs', exphbs({
@@ -23,6 +23,7 @@ app.set('view engine', '.hbs');
 
 // TODO Middlewares
 app.use(express.urlencoded({extended: false}));
+app.use(express.json());
 app.use(overrideM('_method'));
 app.use(session({
     secret: 'secreto',

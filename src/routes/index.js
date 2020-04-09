@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const sendMail = require('../models/mail');
+const sendMail = require('../models/email');
 
 router.get('/', (req, res) => {
     res.render('index');

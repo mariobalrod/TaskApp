@@ -4,6 +4,8 @@ const exphbs = require('express-handlebars');
 const overrideM = require('method-override');
 const session = require('express-session');
 
+require('dotenv').config();
+
 // TODO Initializations
 const app = express();
 require('./database');

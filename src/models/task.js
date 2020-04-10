@@ -13,6 +13,10 @@ const TaskSch = new Schema({
         required: true
     },
 
+    user: {
+        type: String
+    },
+
     date: {
         type: Date, 
         default: Date.now

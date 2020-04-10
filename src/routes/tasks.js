@@ -10,7 +10,7 @@ const {isAuthenticated} = require('../helpers/auth');
 
 // TODO: Listar las Tareas
 router.get('/task', isAuthenticated, async (req, res) => {
-    const tasks = await Task.find().sort({date: 'desc'});
+    const tasks = await Task.find({user: req.user.id}).sort({date: 'desc'});
     //console.log(tasks);
     res.render('tasks/task-list', { tasks });
 });
@@ -43,9 +43,10 @@ router.post('/task/add', isAuthenticated, async (req, res) => {
             description
         });
     }else {
-        const task = new Task({title, description});
-        await task.save();
-        //console.log('Task Saved!');
+        const newTask = new Task({title, description});
+        newTask.user = req.user.id;
+        await newTask.save();
+        req.flash('succes_msg', 'Task Added')
         res.redirect('/task');
     }
     

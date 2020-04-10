@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 
+const {isAuthenticated} = require('../helpers/auth');
+
 const User = require('../models/user');
 require('../config/passport');
 
@@ -82,8 +84,12 @@ router.get('/user/logout', (req, res) => {
 //------------------------------------------------------------------------------------------------
 //          PROFILE
 //------------------------------------------------------------------------------------------------
-router.get('/user/profile', (req, res) => {
+router.get('/user/profile', isAuthenticated, (req, res) => {
     res.render('user/profile');
+});
+
+router.get('/user/profile/edit', isAuthenticated, (req, res) => {
+    res.render('user/addAvatar');
 });
 
 module.exports = router;

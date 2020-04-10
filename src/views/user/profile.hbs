@@ -1,1 +1,17 @@
-<h1>PROFILE</h1>
+
+<div class="col-md-4 mx-auto" style="margin-top: 80px;">
+    <div class="card profile-card-3">
+        <div class="background-block">
+            <img src="https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" 
+                alt="profile-sample1" alt="profile-sample1" class="background" />
+        </div>
+        <a href="/user/profile/edit"><div class="profile-thumb-block">
+            <img src="{{user.imgUrl}}" alt="profile-image" class="profile" />
+        </div></a>
+        <div class="card-content">
+            <h2>{{user.username}}<small></small></h3>
+            <h6>{{user.email}}</h6>
+        </div>
+    </div>
+    <p class="mt-3 w-100 float-left text-center" style="color: white;">Registered: <strong>{{user.date}}</strong></p>
+</div>

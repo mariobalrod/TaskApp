@@ -1,6 +1,10 @@
 
-
 <div class="row" style="margin-top: 80px;">
+  {{#if tasks}}
+      <a href="/task/add" class="btn btn-success btn-block mx-auto" style="width: 100px;"><i class="fas fa-plus-square"></i></a>
+  {{/if}}
+</div>
+<div class="row" style="margin-top: 10px;">
   {{#each tasks}}
   <div class="col-md-3" style="margin-top: 25px;">
     <div class="card">
@@ -20,7 +24,7 @@
   {{else}}
   <div class="card mx-auto">
     <div class="card-body">
-      <h1>Hello </h1>
+      <h1>Hello {{user.username}}</h1>
       <p clsss="lead">There are not Notes yet.</p>
       <a href="/task/add" class="btn btn-success btn-block">Create One!</a>
     </div>

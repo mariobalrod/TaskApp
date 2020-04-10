@@ -1,4 +1,5 @@
-<div class="container p-5" style="margin-top: 180px;">
+
+<div class="container p-5" style="margin-top: 50px;">
     <div class="row">
         <div class="col-sm-4 offset-md-4">
             <div class="card animated pulse">
@@ -7,14 +8,16 @@
                 </div>
                 <div class="card-body">
 
-                    <form action="/">
+                    <form action="/user/signin" method="POST">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Username</label>
-                            <input type="text" class="form-control" id="exampleInputUsername" autofocus required>
+                            <input type="text" class="form-control" 
+                                id="exampleInputUsername" name="username" autofocus required>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" required>
+                            <input type="password" class="form-control" name="password"
+                                id="exampleInputPassword1" required>
                         </div>
                         <button type="submit" class="btn btn-primary">Login</button>
                     </form>
